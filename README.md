@@ -9,8 +9,11 @@
 ## Tech Stack in Project 
 
 - **Language**
-    - reactjs
-    - nodejs
+    - javascript(reactjs)
+    - javascript(nodejs)
+- **framework**
+    - bootstrap v4
+    - template adminLTE v2.4.10
 - **Virtualization Technology**
     - docker
 - **Libraries** 

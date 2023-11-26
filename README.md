@@ -12,7 +12,7 @@
     - javascript(reactjs)
     - javascript(nodejs)
 - **framework**
-    - bootstrap v4
+    - bootstrap v3.3.7
     - template adminLTE v2.4.10
 - **Virtualization Technology**
     - docker

@@ -42,8 +42,9 @@
 
 ## Screenshots
 ![App Screenshot](./screenshots/login.png)
-    - username : admin
-    - password : P@ssw0rd@admin
+- username : admin
+- password : P@ssw0rd@admin
+
 ![App Screenshot](./screenshots/manu.png)
 ![App Screenshot](./screenshots/vehicle.png)
 ![App Screenshot](./screenshots/vehicle_auto.png)

@@ -43,19 +43,7 @@ async function create(import_pdf) {
       path.join(__dirname, "/fonts/th-sarabun-psk/THSarabun.ttf")
     );
     const fontTHSarabunPSK = await document.embedFont(fontBytesTHSarabun);
-
-    // const fontBytesWingdings2 = fs.readFileSync(
-    //   path.join(__dirname, "/fonts/Wingdings2/WINGDNG2.TTF")
-    // );
-    // const fontWingdings2 = await document.embedFont(fontBytesWingdings2);
-
     const page_1 = document.getPage(0);
-
-    // const numberPDF = "1";
-    // const brandPDF = "dasd";
-    // const modelPDF = "dasd";
-    // const serialnumberPDF = "dasd";
-    // const agencyPDF = "dasd";
 
     await pagePDF_1(
       page_1,
@@ -75,36 +63,6 @@ async function create(import_pdf) {
       await document.save()
     );
 
-    // localStorage = new LocalStorage("./scratch");
-    // localStorage.setItem(
-    //   "file_pdf_show",
-    //   `${import_pdf.numberPDF}_DTRS_3_PreventiveMaintenanceReport_20230522.pdf`
-    // );
-    // fs.opendir(
-    //   // Path of the directory
-    //   path.join(
-    //     process.cwd(),
-    //     `/model/DTRS_Rental5Airport/DMK/HDTK/generatePDF/uploaded/data`
-    //   ),
-
-    //   // Options for modifying the operation
-    //   { encoding: "utf8", bufferSize: 64 },
-
-    //   // Callback with the error and returned
-    //   // directory
-    //   (err, dir) => {
-    //     if (err) console.log("Error:", err);
-    //     else {
-    //       // Print the pathname of the directory
-    //       console.log("Path of the directory:", dir.path);
-
-    //       // Close the directory
-    //       console.log("Closing the directory");
-    //       dir.closeSync();
-    //     }
-    //   }
-    // );
-
     let sendToroutes = {
       statusFoundFilePDF: statusFilePDF,
     };
@@ -120,5 +78,4 @@ async function create(import_pdf) {
   }
 }
 
-// createPDF().catch((err) => console.log(err));
 module.exports = { create };

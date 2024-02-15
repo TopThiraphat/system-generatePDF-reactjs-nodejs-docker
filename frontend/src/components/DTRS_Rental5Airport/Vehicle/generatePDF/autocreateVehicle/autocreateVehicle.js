@@ -240,61 +240,7 @@ function AutocreateVehicle() {
     );
   };
 
-  // showPreviewImage = (values) => {
-  //   if (values.file_image_obj) {
-  //     console.log(values.file_image_obj);
-  //   }
-  // };
 
-  // const showNotFound = (image) => {
-  //   const employees = ["Alice", "Bob", "Carl"];
-
-  //   console.log(employees);
-  //   console.log(image);
-
-  //   return (
-  //     <>
-  //       <div>
-  //         {image != null &&
-  //           image.map((image, index) => {
-  //             return (
-  //               <div key={index}>
-  //                 <h2>name: {image}</h2>
-
-  //                 <hr />
-  //               </div>
-  //             );
-  //           })}
-  //       </div>
-  //       <ul>
-  //         {/* {image != null &&
-  //           [image].map((file) => {
-  //             console.log(file);
-  //             return (
-  //               <>
-  //                 <li>coffee</li>
-  //               </>
-  //             );
-  //           })} */}
-
-  //         {/* {image != null &&
-  //           [image].forEach((file, index) => {
-  //             console.log(file);
-  //             return (
-  //               <>
-  //                 <li>coffee</li>
-  //               </>
-  //             );
-  //           })} */}
-  //       </ul>
-  //       {/* <ul>
-  //         <li>Coffee</li>
-  //         <li>Tea</li>
-  //         <li>Milk</li>
-  //       </ul> */}
-  //     </>
-  //   );
-  // };
 
   return (
     <>
@@ -322,7 +268,6 @@ function AutocreateVehicle() {
           formData.append("excel", values.file_excel);
 
           [...values.file_image].forEach((file, i) => {
-            // formData.append(`image-${i}`, file, file.name);
             formData.append(`image-${i}`, values.file_image[i]);
           });
 
@@ -355,7 +300,7 @@ function AutocreateVehicle() {
               checkStatusCode.data.statusFoundXlsx == "FoundXlsx" &&
               checkStatusCode.data.statusFoundImage == "notFoundImage" &&
               checkStatusCode.data.statusFoundImageCarregistration ==
-                "FoundImageCarregistration"
+              "FoundImageCarregistration"
             ) {
               MySwal.fire({
                 icon: "error",
@@ -368,7 +313,7 @@ function AutocreateVehicle() {
               checkStatusCode.data.statusFoundXlsx == "FoundXlsx" &&
               checkStatusCode.data.statusFoundImage == "FoundImage" &&
               checkStatusCode.data.statusFoundImageCarregistration ==
-                "notFoundImageCarregistration"
+              "notFoundImageCarregistration"
             ) {
               MySwal.fire({
                 icon: "error",
@@ -380,7 +325,7 @@ function AutocreateVehicle() {
             if (
               checkStatusCode.data.statusFoundImage == "notFoundImage" &&
               checkStatusCode.data.statusFoundImageCarregistration ==
-                "notFoundImageCarregistration"
+              "notFoundImageCarregistration"
             ) {
               MySwal.fire({
                 icon: "error",
@@ -393,7 +338,7 @@ function AutocreateVehicle() {
               checkStatusCode.data.statusFoundXlsx == "FoundXlsx" &&
               checkStatusCode.data.statusFoundImage == "FoundImage" &&
               checkStatusCode.data.statusFoundImageCarregistration ==
-                "FoundImageCarregistration"
+              "FoundImageCarregistration"
             ) {
               let timerInterval;
               MySwal.fire({

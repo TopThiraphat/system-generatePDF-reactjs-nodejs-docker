@@ -584,20 +584,12 @@ function CreateVehicle() {
                         id="addpdf"
                         type="submit"
                         disabled={isSubmitting}
-                        // onClick={function () {
-                        //   window.open(`${pdfUrl}/`);
-                        // }}
+
                       >
                         {" "}
                         สร้างไฟล์ <i className="fa fa-arrow-circle-right" />
                       </button>
-                      {/* <button
-                        onClick={function () {
-                          window.open("https://www.geeksforgeeks.org/");
-                        }}
-                      >
-                        window
-                      </button> */}
+
                     </div>
                   </form>
                 </div>
@@ -606,10 +598,7 @@ function CreateVehicle() {
             <section className="col-lg-5 connectedSortable">
               <div className="box box-solid bg-white-gradient">
                 <div className="box-header">
-                  {/* <img
-                    src={`${process.env.PUBLIC_URL}/img/test.png`}
-                    style={{ height: 100 }}
-                  /> */}
+
                   <h4 style={{ color: "red" }}>ตัวอย่าง ตำแหน่งการใส่ข้อมูล</h4>
                   <iframe
                     // src="https://us1.pdfgeneratorapi.com/api/v3/templates/686726/output?key=ab0801834ab51edb6e8fee01dd4adc28f0dcd8a03ea2f2f17eeeb475b5c51ec8&workspace=demo.example@actualreports.com&signature=3123e0212c6e3d44b64738a77b0daf0781a1271439cab6301755cb4773a6446f&data=https://pdfgeneratorapi-web-assets.s3.amazonaws.com/data/bill_of_lading_data.json&format=pdf&output=I"
@@ -621,10 +610,7 @@ function CreateVehicle() {
               </div>
               <div className="box box-solid bg-white-gradient">
                 <div className="box-header">
-                  {/* <img
-                    src={`${process.env.PUBLIC_URL}/img/test.png`}
-                    style={{ height: 100 }}
-                  /> */}
+
                   <h4 style={{ color: "red" }}>โครง PDF ที่ใช้ใส่ข้อมูล</h4>
                   <iframe
                     // src="https://us1.pdfgeneratorapi.com/api/v3/templates/686726/output?key=ab0801834ab51edb6e8fee01dd4adc28f0dcd8a03ea2f2f17eeeb475b5c51ec8&workspace=demo.example@actualreports.com&signature=3123e0212c6e3d44b64738a77b0daf0781a1271439cab6301755cb4773a6446f&data=https://pdfgeneratorapi-web-assets.s3.amazonaws.com/data/bill_of_lading_data.json&format=pdf&output=I"
@@ -878,8 +864,6 @@ function CreateVehicle() {
           });
         }
 
-        // this.props.history.goBack();
-        // window.open(`${pdfUrl}/${sendToserver.data.namePDF}`);
       }}
     >
       {(props) => showForm(props)}

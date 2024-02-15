@@ -32,7 +32,7 @@ uploadImageDesktop = async (files, doc) => {
     let newpath1 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image1;
@@ -50,7 +50,7 @@ uploadImageDesktop = async (files, doc) => {
     let newpath2 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image2;
@@ -69,7 +69,7 @@ uploadImageDesktop = async (files, doc) => {
     let newpath3 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image3;
@@ -88,7 +88,7 @@ uploadImageDesktop = async (files, doc) => {
     let newpath4 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image4;
@@ -107,7 +107,7 @@ uploadImageDesktop = async (files, doc) => {
     let newpath5 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image5;
@@ -126,7 +126,7 @@ uploadImageDesktop = async (files, doc) => {
     let newpath6 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image6;
@@ -187,14 +187,11 @@ uploadImageDesktopGroup = async (files, doc) => {
       );
       const fileExtention2 = split_file_number2.split(".")[0];
 
-      // let fileExtention1 = files[key][0].originalFilename.split(".")[3];
-      // let fileExtention2 = files[key][0].originalFilename.split(/[-,.]/);
-
       if (fileExtention1 == "jpg") {
         let newpathImage =
           path.resolve(
             process.cwd() +
-              "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
+            "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/images"
           ) +
           "/" +
           `${doc.airport}-DTRS-PM${doc.time}-${doc.year}-Desktop-${fileExtention2}.${fileExtention1}`;
@@ -215,7 +212,7 @@ uploadPDFDesktop = async (files, doc) => {
     let newpath =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/templates"
+        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/templates"
       ) +
       "/" +
       doc.pdfdesktop;
@@ -243,43 +240,36 @@ router.post("/create", async (req, res) => {
         serialnumber1PDF: String(fields.serialnumber1),
         agency1PDF: String(fields.agency1),
         location1PDF: String(fields.location1),
-
-        // image1PDF: await uploadImage(files, fields),
         //
         // image row 2
         number2PDF: String(fields.number2),
         serialnumber2PDF: String(fields.serialnumber2),
         agency2PDF: String(fields.agency2),
         location2PDF: String(fields.location2),
-        // image2PDF: await uploadImage(files, fields),
         //
         // image row 3
         number3PDF: String(fields.number3),
         serialnumber3PDF: String(fields.serialnumber3),
         agency3PDF: String(fields.agency3),
         location3PDF: String(fields.location3),
-        // image3PDF: await uploadImage(files, fields),
         //
         // image row 4
         number4PDF: String(fields.number4),
         serialnumber4PDF: String(fields.serialnumber4),
         agency4PDF: String(fields.agency4),
         location4PDF: String(fields.location4),
-        // image4PDF: await uploadImage(files, fields),
         //
         // image row 5
         number5PDF: String(fields.number5),
         serialnumber5PDF: String(fields.serialnumber5),
         agency5PDF: String(fields.agency5),
         location5PDF: String(fields.location5),
-        // image5PDF: await uploadImage(files, fields),
         //
         // image row 6
         number6PDF: String(fields.number6),
         serialnumber6PDF: String(fields.serialnumber6),
         agency6PDF: String(fields.agency6),
         location6PDF: String(fields.location6),
-        // image6PDF: await uploadImage(files, fields),
         //
 
         // footer
@@ -291,9 +281,6 @@ router.post("/create", async (req, res) => {
       };
       let checkfilePDF = await create(import_pdf);
 
-      // const file = localStorage.getItem("file_pdf_show");
-      // localStorage.removeItem("file_pdf_show");
-      // res.json({ namePDF: file });
       res.json({
         result: constants.kResultOk,
         statusFoundFilePDF: checkfilePDF.statusFoundFilePDF,
@@ -390,7 +377,7 @@ router.get("/download/automation/:filename", async (req, res) => {
   let filePath =
     path.join(
       process.cwd() +
-        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/compressing"
+      "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/compressing"
     ) +
     "/" +
     req.params.filename;
@@ -469,7 +456,7 @@ router.get("/download/:filename", async (req, res) => {
   let filePath =
     path.join(
       process.cwd() +
-        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/compressing"
+      "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/compressing"
     ) +
     "/" +
     req.params.filename;
@@ -549,7 +536,7 @@ router.get("/download/images/:filename", async (req, res) => {
   let filePath =
     path.join(
       process.cwd() +
-        "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/compressing"
+      "/model/DTRS_Rental5Airport/Desktop/generatePDF/uploaded/compressing"
     ) +
     "/" +
     req.params.filename;

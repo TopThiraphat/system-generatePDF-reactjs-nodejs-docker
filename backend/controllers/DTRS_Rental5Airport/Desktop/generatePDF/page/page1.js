@@ -1,17 +1,15 @@
 const {
-  // herder
+  // ---> herder
   brandPDF_x,
   brandPDF_y,
   modelPDF_x,
   modelPDF_y,
-  //
-  // footer
+  // ---> footer
   pagePDF_x,
   pagePDF_Y,
   ofPDF_x,
   ofPDF_y,
-  //
-  // Row 1 col 1
+  // ---> Row 1 col 1
   number1PDF_x,
   number1PDF_y,
   messageSerialNumber1PDF_x,
@@ -26,13 +24,12 @@ const {
   messagelocation1PDF_y,
   location1PDF_x,
   location1PDF_y,
-  // image
+  // ---> image
   image1PDF_x,
   image1PDF_y,
   image1PDF_w,
   image1PDF_h,
-
-  // Row 1 col 2
+  // ---> Row 1 col 2
   number2PDF_x,
   number2PDF_y,
   messageSerialNumber2PDF_x,
@@ -47,13 +44,12 @@ const {
   messagelocation2PDF_y,
   location2PDF_x,
   location2PDF_y,
-  // image
+  // --->image
   image2PDF_x,
   image2PDF_y,
   image2PDF_w,
   image2PDF_h,
-
-  // Row 2 col 1
+  // ---> Row 2 col 1
   number3PDF_x,
   number3PDF_y,
   messageSerialNumber3PDF_x,
@@ -68,13 +64,12 @@ const {
   messagelocation3PDF_y,
   location3PDF_x,
   location3PDF_y,
-  // image
+  // ---> image
   image3PDF_x,
   image3PDF_y,
   image3PDF_w,
   image3PDF_h,
-
-  // Row 2 col 2
+  // ---> Row 2 col 2
   number4PDF_x,
   number4PDF_y,
   messageSerialNumber4PDF_x,
@@ -89,13 +84,12 @@ const {
   messagelocation4PDF_y,
   location4PDF_x,
   location4PDF_y,
-  // image
+  // ---> image
   image4PDF_x,
   image4PDF_y,
   image4PDF_w,
   image4PDF_h,
-
-  // Row 3 col 1
+  // ---> Row 3 col 1
   number5PDF_x,
   number5PDF_y,
   messageSerialNumber5PDF_x,
@@ -110,13 +104,12 @@ const {
   messagelocation5PDF_y,
   location5PDF_x,
   location5PDF_y,
-  // image
+  // ---> image
   image5PDF_x,
   image5PDF_y,
   image5PDF_w,
   image5PDF_h,
-
-  // Row 3 col 2
+  // ---> Row 3 col 2
   number6PDF_x,
   number6PDF_y,
   messageSerialNumber6PDF_x,
@@ -131,7 +124,7 @@ const {
   messagelocation6PDF_y,
   location6PDF_x,
   location6PDF_y,
-  // image
+  // ---> image
   image6PDF_x,
   image6PDF_y,
   image6PDF_w,
@@ -147,7 +140,7 @@ async function pagePDF_1(
   path,
   import_pdf
 ) {
-  // header
+  // ---> header
   page_1.moveTo(brandPDF_x, brandPDF_y);
   page_1.drawText(import_pdf.brandPDF, {
     font: fontTHSarabunPSKBold,
@@ -158,9 +151,7 @@ async function pagePDF_1(
     font: fontTHSarabunPSKBold,
     size: 16,
   });
-  //
-
-  // footer
+  // ---> footer
   page_1.moveTo(pagePDF_x, pagePDF_Y);
   page_1.drawText(import_pdf.pagePDF, {
     font: fontTHSarabunPSK,
@@ -190,7 +181,7 @@ async function pagePDF_1(
       import_pdf.agency1PDF != "" &&
       import_pdf.sumImagePDF.image1 != "undefined"
     ) {
-      // Row 1 col 1
+      // ---> Row 1 col 1
       page_1.moveTo(number1PDF_x, number1PDF_y);
       page_1.drawText(import_pdf.number1PDF, {
         font: fontTHSarabunPSKBold,
@@ -248,7 +239,7 @@ async function pagePDF_1(
       import_pdf.agency2PDF != "" &&
       import_pdf.sumImagePDF.image2 != "undefined"
     ) {
-      // Row 1 col 2
+      // ---> Row 1 col 2
       page_1.moveTo(number2PDF_x, number2PDF_y);
       page_1.drawText(import_pdf.number2PDF, {
         font: fontTHSarabunPSKBold,
@@ -317,7 +308,7 @@ async function pagePDF_1(
       import_pdf.agency3PDF != "" &&
       import_pdf.sumImagePDF.image3 != "undefined"
     ) {
-      // Row 2 col 1
+      // ---> Row 2 col 1
       page_1.moveTo(number3PDF_x, number3PDF_y);
       page_1.drawText(import_pdf.number3PDF, {
         font: fontTHSarabunPSKBold,
@@ -374,7 +365,7 @@ async function pagePDF_1(
       import_pdf.agency4PDF != "" &&
       import_pdf.sumImagePDF.image4 != "undefined"
     ) {
-      // Row 2 col 2
+      // ---> Row 2 col 2
       page_1.moveTo(number4PDF_x, number4PDF_y);
       page_1.drawText(import_pdf.number4PDF, {
         font: fontTHSarabunPSKBold,
@@ -442,7 +433,7 @@ async function pagePDF_1(
       import_pdf.agency5PDF != "" &&
       import_pdf.sumImagePDF.image5 != "undefined"
     ) {
-      // Row 3 col 1
+      // ---> Row 3 col 1
       page_1.moveTo(number5PDF_x, number5PDF_y);
       page_1.drawText(import_pdf.number5PDF, {
         font: fontTHSarabunPSKBold,
@@ -499,8 +490,7 @@ async function pagePDF_1(
       import_pdf.agency6PDF != "" &&
       import_pdf.sumImagePDF.image6 != "undefined"
     ) {
-      // Row 3 col 1
-
+      // ---> Row 3 col 1
       page_1.moveTo(number6PDF_x, number6PDF_y);
       page_1.drawText(import_pdf.number6PDF, {
         font: fontTHSarabunPSKBold,
@@ -550,7 +540,6 @@ async function pagePDF_1(
         width: image6PDF_w,
         height: image6PDF_h,
       });
-      //
     }
   }
 }

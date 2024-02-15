@@ -32,7 +32,7 @@ uploadImageVehicle = async (files, doc) => {
     let newpath1 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image1;
@@ -50,7 +50,7 @@ uploadImageVehicle = async (files, doc) => {
     let newpath2 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image2;
@@ -69,7 +69,7 @@ uploadImageVehicle = async (files, doc) => {
     let newpath3 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image3;
@@ -88,7 +88,7 @@ uploadImageVehicle = async (files, doc) => {
     let newpath4 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image4;
@@ -107,7 +107,7 @@ uploadImageVehicle = async (files, doc) => {
     let newpath5 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image5;
@@ -126,7 +126,7 @@ uploadImageVehicle = async (files, doc) => {
     let newpath6 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image6;
@@ -150,7 +150,6 @@ uploadImageVehicle = async (files, doc) => {
 };
 // Upload Excel
 uploadExcelVehicle = async (files, doc) => {
-  // console.log("xlsx : ", files);
 
   if (files.excel[0].originalFilename != null) {
     let fileExtention = files.excel[0].originalFilename.split(".")[1];
@@ -173,13 +172,10 @@ uploadExcelVehicle = async (files, doc) => {
 uploadImageVehicleGroup = async (files, doc) => {
   Object.keys(files).forEach(async (key, index) => {
     if (files[key][0].originalFilename != null) {
-      // acess 1 file = xlsx , image
 
-      // fileExtention1 = .jpg
       const split_file_type = files[key][0].originalFilename.split(".");
       const fileExtention1 = split_file_type.pop();
 
-      // fileExtention2 = Number
       const split_file_number1 =
         files[key][0].originalFilename.lastIndexOf("-");
       const split_file_number2 = files[key][0].originalFilename.slice(
@@ -200,7 +196,7 @@ uploadImageVehicleGroup = async (files, doc) => {
           let newpathImage =
             path.resolve(
               process.cwd() +
-                "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
+              "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
             ) +
             "/" +
             `${doc.airport}-DTRS-PM${doc.time}-${doc.year}-Vehicle-${fileExtention2}-Carregistration.${fileExtention1}`;
@@ -216,7 +212,7 @@ uploadImageVehicleGroup = async (files, doc) => {
           let newpathImage =
             path.resolve(
               process.cwd() +
-                "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
+              "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images"
             ) +
             "/" +
             `${doc.airport}-DTRS-PM${doc.time}-${doc.year}-Vehicle-${fileExtention2}.${fileExtention1}`;
@@ -238,7 +234,7 @@ uploadPDFVehicle = async (files, doc) => {
     let newpath =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/templates"
+        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/templates"
       ) +
       "/" +
       doc.pdfvehicle;
@@ -287,10 +283,6 @@ router.post("/create", async (req, res) => {
         sumImagePDF: await uploadImageVehicle(files, fields),
       };
       let checkfilePDF = await create(import_pdf);
-
-      // const file = localStorage.getItem("file_pdf_show");
-      // localStorage.removeItem("file_pdf_show");
-      // res.json({ namePDF: file });
       res.json({
         result: constants.kResultOk,
         statusFoundFilePDF: checkfilePDF.statusFoundFilePDF,
@@ -394,7 +386,7 @@ router.get("/download/automation/:filename", async (req, res) => {
   let filePath =
     path.join(
       process.cwd() +
-        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/compressing"
+      "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/compressing"
     ) +
     "/" +
     req.params.filename;
@@ -429,9 +421,6 @@ router.get("/download/automation/:filename", async (req, res) => {
           }
         );
 
-        // res.json({
-        //   result: constants.kResultOk,
-        // });
       }
     }
   );
@@ -477,7 +466,7 @@ router.get("/download/:filename", async (req, res) => {
   let filePath =
     path.join(
       process.cwd() +
-        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/compressing"
+      "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/compressing"
     ) +
     "/" +
     req.params.filename;
@@ -556,7 +545,7 @@ router.get("/download/images/:filename", async (req, res) => {
   let filePath =
     path.join(
       process.cwd() +
-        "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/compressing"
+      "/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/compressing"
     ) +
     "/" +
     req.params.filename;

@@ -236,62 +236,6 @@ function AutocreateHDTK() {
     );
   };
 
-  // showPreviewImage = (values) => {
-  //   if (values.file_image_obj) {
-  //     console.log(values.file_image_obj);
-  //   }
-  // };
-
-  // const showNotFound = (image) => {
-  //   const employees = ["Alice", "Bob", "Carl"];
-
-  //   console.log(employees);
-  //   console.log(image);
-
-  //   return (
-  //     <>
-  //       <div>
-  //         {image != null &&
-  //           image.map((image, index) => {
-  //             return (
-  //               <div key={index}>
-  //                 <h2>name: {image}</h2>
-
-  //                 <hr />
-  //               </div>
-  //             );
-  //           })}
-  //       </div>
-  //       <ul>
-  //         {/* {image != null &&
-  //           [image].map((file) => {
-  //             console.log(file);
-  //             return (
-  //               <>
-  //                 <li>coffee</li>
-  //               </>
-  //             );
-  //           })} */}
-
-  //         {/* {image != null &&
-  //           [image].forEach((file, index) => {
-  //             console.log(file);
-  //             return (
-  //               <>
-  //                 <li>coffee</li>
-  //               </>
-  //             );
-  //           })} */}
-  //       </ul>
-  //       {/* <ul>
-  //         <li>Coffee</li>
-  //         <li>Tea</li>
-  //         <li>Milk</li>
-  //       </ul> */}
-  //     </>
-  //   );
-  // };
-
   return (
     <>
       <Formik

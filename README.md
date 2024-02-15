@@ -1,30 +1,31 @@
 # generatePDF-reactjs-nodejs-docker
 
-- เป็นระบบ generate ไฟล์ PDF ที่พัฒนาด้วย ReactJS เป็น frontend และใช้ NodeJS เป็น Webservice API โดยใช้ framework ที่ชื่อว่า Express
-- โดยระบบจะมี 2 ฟังก์ชั่น คือ manual generate และautomation generate
-- manual generate จะมีช่อง input ข้อความสำหรับกรอก เพื่อใช้ map ข้อความ เพื่อพอดลง PDF
-- automation generate จะmap ข้อความจาก xlsx และเอามา พอดลง PDF ให้อัตโนมัติโดยไม่ต้อง พิมพ์ในช่อง input ที่ละอัน
-- โดยระบบทั้งหมด deploy บน virtualization technology คือ Docker
+- เป็นระบบ Generate ไฟล์ PDF ตาม Pattern ที่กำหนด ที่พัฒนาด้วย ReactJS เป็น frontend และใช้ NodeJS เป็น Webservice API โดยใช้ framework ที่ชื่อว่า Express
+- โดยระบบจะมี 2 ฟังก์ชั่น คือ Manual Generate และ Automation Generate
+- Manual Generate จะมีช่อง Input ข้อความให้กรอก เพื่อ map ข้อความที่กรอก ลงบน PDF
+- Automation Generate จะ map ข้อความจาก ไฟล์ xlsx และเอาข้อความของช่อง xlsx บันทึกลง PDF ให้อัตโนมัติ โดยไม่ต้อง Manual Generate ที่ละอัน
+- โดยระบบทั้งหมด Deploy บน Virtualization Technology คือ Docker
+- ประโยชน์ของระบบนี้ คือ ลดเวลาการทำงานในส่วนของการทำ Report ต่างๆ โดยระบบจะปรับและจัดเรียง ตำแหน่งข้อมความ หรือรูปภาพให้อัตโนมัติ ทำให้สะดวกสะบายในการทำงานมากยิ่งขึ้น
 
 ## Tech Stack in Project 
 
 - **Language**
-    - javascript(reactjs)
-    - javascript(nodejs)
+    - JavaScript(ReactJS)
+    - JavaScript(NodeJS)
 - **State Management**
-    - react context API
+    - React Context API
 - **Framework**
-    - bootstrap v3.3.7
-    - template adminLTE v2.4.10
+    - Bootstrap v3.3.7
+    - Template AdminLTE v2.4.10
 - **Virtualization Technology**
-    - docker
+    - Docker
 - **Libraries** 
-    - pdf-lib
-    - compressing
-    - fs-extra
-    - xlsx
-    - express
-    - cors
+    - PDF-LIB
+    - Compressing
+    - FS-Extra
+    - XLSX
+    - Express
+    - CORS
     
 
 
@@ -44,15 +45,27 @@
 
 ## Screenshots
 ![App Screenshot](./screenshots/login.png)
+
 - username : admin
 - password : P@ssw0rd@admin
 
+ตัวอย่าง : หน้าเมนูการทำ Report
+
 ![App Screenshot](./screenshots/manu.png)
+
+ตัวอย่าง : หน้าแบบ Form กรอกข้อมูล แบบ Manual Generate
+
 ![App Screenshot](./screenshots/vehicle.png)
+
+ตัวอย่าง : หน้าแบบ Form กรอกข้อมูล แบบ Automation Generate
+
 ![App Screenshot](./screenshots/vehicle_auto.png)
+
+ตัวอย่าง : หน้า Export file
+
 ![App Screenshot](./screenshots/export.png)
 
-ตัวอย่าง ไฟล์ PDF ที่ได้จากการ Generate
+ตัวอย่าง : ไฟล์ PDF ที่ได้จากการ Generate
 
 ![App Screenshot](./screenshots/example.png)
 

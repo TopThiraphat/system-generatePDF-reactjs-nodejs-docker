@@ -128,10 +128,10 @@ async function autocreate(import_pdf) {
       )
     );
     var sheet_name_list = workbook.SheetNames;
-    var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[4]]);
+    var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
 
     var xlDataHeader = XLSX.utils.sheet_to_json(
-      workbook.Sheets[sheet_name_list[4]],
+      workbook.Sheets[sheet_name_list[0]],
       {
         header: 1,
       }
@@ -145,21 +145,21 @@ async function autocreate(import_pdf) {
       checkSerialNo: "ถูกต้อง",
       checkDepartment: "ถูกต้อง",
     };
-    if (xlDataHeader[0][5] != "NameKey") {
-      statusFoundXlsx = "notFoundXlsx";
-      checkXlsx.checkNameKey = `ควรตั้งเป็น "NameKey"`;
-    }
     if (xlDataHeader[0][0] != "No") {
       statusFoundXlsx = "notFoundXlsx";
       checkXlsx.checkNo = `ควรตั้งเป็น "No"`;
     }
-    if (xlDataHeader[0][6] != "SerialNo") {
+    if (xlDataHeader[0][1] != "SerialNo") {
       statusFoundXlsx = "notFoundXlsx";
       checkXlsx.checkSerialNo = `ควรตั้งเป็น "SerialNo"`;
     }
-    if (xlDataHeader[0][13] != "Department") {
+    if (xlDataHeader[0][2] != "Department") {
       statusFoundXlsx = "notFoundXlsx";
       checkXlsx.checkDepartment = `ควรตั้งเป็น "Department"`;
+    }
+    if (xlDataHeader[0][4] != "NameKey") {
+      statusFoundXlsx = "notFoundXlsx";
+      checkXlsx.checkNameKey = `ควรตั้งเป็น "NameKey"`;
     }
     //
 
@@ -203,8 +203,7 @@ async function autocreate(import_pdf) {
       const checkfiles = globSync(
         path.join(
           process.cwd(),
-          `/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images/${
-            import_pdf.airportPDF
+          `/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images/${import_pdf.airportPDF
           }-DTRS-PM${import_pdf.timePDF}-${import_pdf.yearPDF}-Vehicle-${String(
             xlData[countCheck].No
           )}.jpg`
@@ -213,8 +212,7 @@ async function autocreate(import_pdf) {
       const checkfiles_carregistration = globSync(
         path.join(
           process.cwd(),
-          `/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images/${
-            import_pdf.airportPDF
+          `/model/DTRS_Rental5Airport/Vehicle/generatePDF/uploaded/images/${import_pdf.airportPDF
           }-DTRS-PM${import_pdf.timePDF}-${import_pdf.yearPDF}-Vehicle-${String(
             xlData[countCheck].No
           )}-Carregistration.jpg`
@@ -253,8 +251,7 @@ async function autocreate(import_pdf) {
       statusFoundImage == "FoundImage" &&
       statusFoundImageCarregistration == "FoundImageCarregistration"
     ) {
-      // console.log("Ok");
-      for (let i = 0; i < xlData.length; ) {
+      for (let i = 0; i < xlData.length;) {
         const document = await PDFDocument.load(
           readFileSync(
             path.join(
@@ -596,5 +593,5 @@ async function autocreate(import_pdf) {
   }
 }
 
-// autocreatePDF();
+
 module.exports = { autocreate };

@@ -31,7 +31,7 @@ uploadImageHDTK = async (files, doc) => {
     let newpath1 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image1;
@@ -49,7 +49,7 @@ uploadImageHDTK = async (files, doc) => {
     let newpath2 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image2;
@@ -68,7 +68,7 @@ uploadImageHDTK = async (files, doc) => {
     let newpath3 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image3;
@@ -87,7 +87,7 @@ uploadImageHDTK = async (files, doc) => {
     let newpath4 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image4;
@@ -106,7 +106,7 @@ uploadImageHDTK = async (files, doc) => {
     let newpath5 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image5;
@@ -125,7 +125,7 @@ uploadImageHDTK = async (files, doc) => {
     let newpath6 =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
+        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
       ) +
       "/" +
       doc.image6;
@@ -149,7 +149,6 @@ uploadImageHDTK = async (files, doc) => {
 };
 // Upload Excel
 uploadExcelHDTK = async (files, doc) => {
-  // console.log("xlsx : ", files);
 
   if (files.excel[0].originalFilename != null) {
     let fileExtention = files.excel[0].originalFilename.split(".")[1];
@@ -171,10 +170,8 @@ uploadExcelHDTK = async (files, doc) => {
 // Upload Image Group
 uploadImageHDTKGroup = async (files, doc) => {
   Object.keys(files).forEach(async (key, index) => {
-    // console.log("image : ", files[key][0].originalFilename);
 
     if (files[key][0].originalFilename != null) {
-      // acess 1 file = xlsx , image
 
       const split_file_type = files[key][0].originalFilename.split(".");
       const fileExtention1 = split_file_type.pop();
@@ -184,16 +181,13 @@ uploadImageHDTKGroup = async (files, doc) => {
       const split_file_number2 = files[key][0].originalFilename.slice(
         split_file_number1 + 1
       );
-      const fileExtention2 = split_file_number2.split(".")[0];
-
-      // let fileExtention1 = files[key][0].originalFilename.split(".")[3];
-      // let fileExtention2 = files[key][0].originalFilename.split(/[-,.]/);
+      const fileExtention2 = split_file_number2.split(".")[0]
 
       if (fileExtention1 == "jpg") {
         let newpathImage =
           path.resolve(
             process.cwd() +
-              "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
+            "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/images"
           ) +
           "/" +
           `${doc.airport}-DTRS-PM${doc.time}-${doc.year}-HDTK-${fileExtention2}.${fileExtention1}`;
@@ -214,7 +208,7 @@ uploadPDFHDTK = async (files, doc) => {
     let newpath =
       path.resolve(
         process.cwd() +
-          "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/templates"
+        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/templates"
       ) +
       "/" +
       doc.pdfhdtk;
@@ -241,37 +235,31 @@ router.post("/create", async (req, res) => {
         number1PDF: String(fields.number1),
         serialnumber1PDF: String(fields.serialnumber1),
         agency1PDF: String(fields.agency1),
-        // image1PDF: await uploadImage(files, fields),
         //
         // image row 2
         number2PDF: String(fields.number2),
         serialnumber2PDF: String(fields.serialnumber2),
         agency2PDF: String(fields.agency2),
-        // image2PDF: await uploadImage(files, fields),
         //
         // image row 3
         number3PDF: String(fields.number3),
         serialnumber3PDF: String(fields.serialnumber3),
         agency3PDF: String(fields.agency3),
-        // image3PDF: await uploadImage(files, fields),
         //
         // image row 4
         number4PDF: String(fields.number4),
         serialnumber4PDF: String(fields.serialnumber4),
         agency4PDF: String(fields.agency4),
-        // image4PDF: await uploadImage(files, fields),
         //
         // image row 5
         number5PDF: String(fields.number5),
         serialnumber5PDF: String(fields.serialnumber5),
         agency5PDF: String(fields.agency5),
-        // image5PDF: await uploadImage(files, fields),
         //
         // image row 6
         number6PDF: String(fields.number6),
         serialnumber6PDF: String(fields.serialnumber6),
         agency6PDF: String(fields.agency6),
-        // image6PDF: await uploadImage(files, fields),
         //
 
         // footer
@@ -283,9 +271,6 @@ router.post("/create", async (req, res) => {
       };
       let checkfilePDF = await create(import_pdf);
 
-      // const file = localStorage.getItem("file_pdf_show");
-      // localStorage.removeItem("file_pdf_show");
-      // res.json({ namePDF: file });
       res.json({
         result: constants.kResultOk,
         statusFoundFilePDF: checkfilePDF.statusFoundFilePDF,
@@ -382,7 +367,7 @@ router.get("/download/automation/:filename", async (req, res) => {
   let filePath =
     path.join(
       process.cwd() +
-        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/compressing"
+      "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/compressing"
     ) +
     "/" +
     req.params.filename;
@@ -461,7 +446,7 @@ router.get("/download/:filename", async (req, res) => {
   let filePath =
     path.join(
       process.cwd() +
-        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/compressing"
+      "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/compressing"
     ) +
     "/" +
     req.params.filename;
@@ -540,7 +525,7 @@ router.get("/download/images/:filename", async (req, res) => {
   let filePath =
     path.join(
       process.cwd() +
-        "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/compressing"
+      "/model/DTRS_Rental5Airport/HDTK/generatePDF/uploaded/compressing"
     ) +
     "/" +
     req.params.filename;

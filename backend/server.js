@@ -33,8 +33,6 @@ app.use(
 );
 //
 app.use(cors());
-// app.use(express.static("public"));
-
 app.use(
   "/api/generatePDF/dtrs_rental5airport/hdtk/",
   require("./routes/DTRS_Rental5Airport/routes-generatePDF-hdtk")
